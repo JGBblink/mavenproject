@@ -1,5 +1,6 @@
 package com.demo.main.rest;
 
+import com.demo.main.domain.User;
 import com.demo.main.service.DemoService;
 import com.demo.web.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class DemoController {
     private DemoService demoService;
 
     @GetMapping("/test")
-    public ApiResponse<String> test() {
-        return ApiResponse.success(demoService.testMethod("test"));
+    public ApiResponse<User> test() {
+        return ApiResponse.success(demoService.listUsers("test"));
     }
 }
