@@ -21,18 +21,41 @@
     </properties>
 
     <dependencies>
-        <!--    第三方依赖    -->
+        <!--    main    -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+
+        <!-- security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.10.7</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.10.7</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.10.7</version>
+        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!-- datasource -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -47,12 +70,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <!-- network -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
@@ -64,7 +82,12 @@
             <version>1.3.70</version>
         </dependency>
 
-
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!--   二方库依赖     -->
         <dependency>
