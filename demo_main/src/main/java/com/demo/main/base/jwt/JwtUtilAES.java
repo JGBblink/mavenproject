@@ -1,5 +1,6 @@
 package com.demo.main.base.jwt;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.json.JSONUtil;
@@ -41,6 +42,7 @@ public class JwtUtilAES {
         Jwt jwt = JwtUtilAES.parseToken(token);
         System.out.println(jwt.getHeader());
         System.out.println(jwt.getBody());
+
     }
 
     /**

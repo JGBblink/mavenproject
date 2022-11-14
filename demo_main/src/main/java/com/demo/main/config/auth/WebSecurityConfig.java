@@ -52,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // 授权认证,暂时还不能和filter配合使用
                 .authorizeRequests()
-                //.antMatchers("/login/**").permitAll()     不需要认证
-                .anyRequest().authenticated()
+                .antMatchers("/**").permitAll();//     不需要认证
+                //.anyRequest().authenticated()
         ;
     }
 

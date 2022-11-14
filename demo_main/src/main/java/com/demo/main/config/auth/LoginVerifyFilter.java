@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +50,9 @@ public class LoginVerifyFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         try {
-            String token = JwtUtilRSA.generateToken(authResult.getAuthorities(), 30);
+            Collection<? extends GrantedAuthority> authorities = authResult.getAuthorities();
+            List<String> roles = authorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
+            String token = JwtUtilRSA.generateToken(roles, 30);
             response.addHeader("Authorization", token);    //将Token信息返回给用户
         } catch (Exception e) {
             e.printStackTrace();
